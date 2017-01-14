@@ -5,7 +5,8 @@
     "prebuild": "npm run clean",
     "build:watch": "watch \"npm run build\" src/",
     "build:js": "babel src/ -d build/",
-    "build": "npm run build:js"
+    "build": "npm run build:js",
+    "start": "node build/index.js"
   },
   "dependencies": {
     "babel-polyfill": "^6.20.0",
