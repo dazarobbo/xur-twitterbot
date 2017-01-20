@@ -1,7 +1,4 @@
 import dotenv from "dotenv";
-import fs from "fs";
-import mv from "mv";
-import path from "path";
 import twit from "twit";
 import BungieNet from "bungienetplatformjs";
 import Torch from "platform-torch";
@@ -25,9 +22,12 @@ function tweetInventory(items) {
     status: `Xûr is selling ${ items.join(", ") }`
   }, (err, data, resp) => {
 
-    if(!err) {
-      console.log("Success!");
+    if(err) {
+      console.log(`Twitter error: ${ err.message }`);
+      return;
     }
+
+    console.log("Success!");
 
   });
 
